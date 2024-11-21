@@ -1,4 +1,7 @@
 FROM python:3.9
+
+RUN apt-get update && apt-get install -y iputils-ping && apt-get clean
+
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt

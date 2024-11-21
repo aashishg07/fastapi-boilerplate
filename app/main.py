@@ -10,8 +10,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 # models.Base.metadata.create_all(bind=engine) 
 
 app = FastAPI(
-    title="Content Flow - OPEN API 3.0",
-    description="A simple publishing platform that allows users to upload posts on any topic",
+    title="Boilerplate API",
+    description="A boilerplate for a FastAPI project",
     docs_url="/"
 )
 

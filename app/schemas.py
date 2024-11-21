@@ -6,13 +6,13 @@ class UserResponse(BaseModel):
     id: int
     email: EmailStr
     username: str
-    
+    role: int
+    role_name: str
     
     class Config:
         orm_mode = True
     
 
-# USER SCHEMAS DEFINED BELOW
 class CreateUser(BaseModel):
     email: EmailStr
     password: str
@@ -21,6 +21,30 @@ class CreateUser(BaseModel):
     username: str
     
 
-class GetUser(BaseModel):
-    email: str
-    created_at: PastDatetime
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+    
+class Group(BaseModel):
+    name: str
+
+
+class GroupResponse(BaseModel):
+    id: int
+    name: str
+
+
+class Permission(BaseModel):
+    name: str
+    group: int
+
+
+class PermissionResponse(BaseModel):
+    id: int
+    name: str
+    group: int
+
+    class Config:
+        orm_mode = True

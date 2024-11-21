@@ -1,3 +1,37 @@
-.venv
-app/.env
+# Virtual-Environments
 .env
+.venv
+env/
+venv/
+myenv/
+ENV/
+
+# Docker
+DockerData/
+postgres_data/
+Dockerfile
+docker-compose.yml
+!docker/Dockerfile
+!docker/docker-compose.yml
+
+# others
+entrypoint.sh
+/static/
+static
+staticfiles
+logs
+logs/
+sock/
+media/
+media
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+__pycache__
+*.py[cod]
+*$py.class
+
+
+#vscode
+.vscode
+.vscode/

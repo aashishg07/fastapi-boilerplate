@@ -1,0 +1,16 @@
+# Virtual envs
+venv/
+ENV/
+
+# Docker
+DockerData/
+
+# Postgresql
+postgres_data
+./postgres_data
+postgres_data/
+
+# others
+logs
+static
+media

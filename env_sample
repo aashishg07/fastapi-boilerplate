@@ -1,0 +1,8 @@
+##================== ENV-SAMPLE ========================##
+##==================`cp env-sample .env`================##
+
+POSTGRES_DB=naxadb
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_PORT=5432
+POSTGRES_HOST=db

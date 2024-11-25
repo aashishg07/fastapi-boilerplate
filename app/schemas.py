@@ -1,13 +1,30 @@
-from pydantic import BaseModel, EmailStr, PastDatetime, conint
+from pydantic import BaseModel, EmailStr
+from typing import List
 from typing import Optional
-from fastapi import File, UploadFile
+
+
+class PermissionResponse(BaseModel):
+    id: int
+    name: str
+
+    class Config:
+        orm_mode = True
+
+class GroupResponse(BaseModel):
+    id: int
+    name: str
+    permissions: List[PermissionResponse] 
+
+    class Config:
+        orm_mode = True
 
 class UserResponse(BaseModel):
     id: int
     email: EmailStr
     username: str
-    role: int
-    role_name: str
+    role_id: Optional[int]
+    role_name: Optional[str]
+    permissions: List[str]
     
     class Config:
         orm_mode = True
@@ -19,15 +36,32 @@ class CreateUser(BaseModel):
     first_name: str
     last_name: str
     username: str
-    
+    role_id: int
 
+
+class UpdateUser(BaseModel):
+    email: EmailStr
+    first_name: str
+    last_name: str
+    username: str
+    role_id: int
+    
+    class Config:
+        orm_mode = True
+
+class CreateUserResponse(BaseModel):
+    email: EmailStr
+    username: str
+    first_name: str
+    last_name: str
+    role_id: int
 
 class UserLogin(BaseModel):
     username: str
     password: str
 
     
-class Group(BaseModel):
+class CreateGroup(BaseModel):
     name: str
 
 
@@ -41,10 +75,16 @@ class Permission(BaseModel):
     group: int
 
 
-class PermissionResponse(BaseModel):
+class CheckUserResponse(BaseModel):
     id: int
-    name: str
-    group: int
+    username: str
+    first_name: str
+    last_name: str
+    role_id: int
+    role_name: str
+    permissions: List[str]
+    created_at: str
+    email: str
 
     class Config:
         orm_mode = True

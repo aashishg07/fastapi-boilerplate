@@ -6,28 +6,29 @@ venv/
 ENV/
 *.env
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django-specific
+*.log
+
 # Docker
 DockerData/
 postgres_data/
 Dockerfile
 *.dockerfile
 *.yaml
+*.yml
 !docker/Dockerfile
 !docker/docker-compose.yml
 
 # Static and media files
-/static/
 static/
+media/
 staticfiles/
-media/
-media/
 logs/
-sock/
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
 
 # IDE and editor settings
 .vscode/
@@ -45,3 +46,28 @@ htmlcov/
 *.egg-info/
 dist/
 build/
+
+# Alembic migrations
+migrations/.mypy_cache/
+migrations/.pytest_cache/
+migrations/*.log
+migrations/*_env.pyc
+
+# Ignore database files
+*.sqlite3
+*.db
+*.db-journal
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Configuration files
+.env.local
+.env.test
+
+# Other IDE files
+.idea/

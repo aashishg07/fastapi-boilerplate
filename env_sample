@@ -1,4 +1,4 @@
-##================== ENV-SAMPLE ========================##
+##================== ENV-SAMPLE For FastAPI boilerplate========================##
 ##==================`cp env-sample .env`================##
 
 POSTGRES_DB=naxadb

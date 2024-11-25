@@ -1,38 +1,47 @@
-# Virtual-Environments
+# Python virtual environments
 .env
 .venv
 env/
 venv/
-myenv/
 ENV/
+*.env
 
 # Docker
 DockerData/
 postgres_data/
 Dockerfile
-docker-compose.yml
+*.dockerfile
+*.yaml
 !docker/Dockerfile
 !docker/docker-compose.yml
 
-# others
-entrypoint.sh
+# Static and media files
 /static/
-static
-staticfiles
-logs
+static/
+staticfiles/
+media/
+media/
 logs/
 sock/
-media/
-media
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
-__pycache__
 *.py[cod]
 *$py.class
 
-
-#vscode
-.vscode
+# IDE and editor settings
 .vscode/
+.idea/
+*.swp
+*.swo
+
+# Test and coverage outputs
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Build files
+*.egg-info/
+dist/
+build/

@@ -9,6 +9,7 @@ ENV/
 # Docker
 DockerData/
 postgres_data/
+Dockerfile
 *.dockerfile
 *.yaml
 !docker/Dockerfile
